@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TalkWithZyd</title>
+</head>
+<body>
+
+
+<p>没错，在下zyd，随时陪你聊天</p>
+    <form method="post" action="{% url 'zyd' %}">
+        {% csrf_token %}
+        <input type="text" name="dialogue" placeholder="type here" autocomplete="off"><br>
+
+        <input type="submit" value="发送" ><br>
+    </form>
+
+<hr style="height:10px;border:none;border-top:10px groove skyblue;" />
+
+{% for item in data%}
+<p>{{ item }}</p>
+{% endfor %}
+<p><img src="/static/images/zyd.png" /></p>
+</body>
+</html>
+
+
